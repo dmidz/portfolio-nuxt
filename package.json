@@ -1,6 +1,10 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "version": "0.0.1",
+  "author": "david@dmidz.com",
+  "license": "UNLICENSED",
+  "description": "Portfolio Nuxt 2023",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -15,5 +19,9 @@
     "nuxt": "^3.6.5",
     "pug": "^3.0.2",
     "sass": "^1.64.1"
+  },
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <17.0.0"
   }
 }
