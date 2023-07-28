@@ -1,5 +1,7 @@
 @import './base.css';
 
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -20,7 +22,7 @@ a,
   transition: 0.4s;
 }
 
-ul {
+ul, p {
   padding-bottom: 0.5rem;
 }
 
@@ -37,6 +39,33 @@ ul {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+main {
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px dotted rgb(0 255 240 / 36%);
+    //border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    padding-left: 1.5rem;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+}
+
+/*__*/
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

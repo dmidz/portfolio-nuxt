@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '~/assets/css/main.css';
+import '~/assets/css/main.scss';
 
 </script>
 
@@ -8,18 +8,16 @@ import '~/assets/css/main.css';
 	header
 		.header-content
 			h1 David MARTIN // Frontend Developper
-			//nav
+			nav
 				RouterLink(to="/") Home
-				RouterLink(to="/about") About
+				//RouterLink(to="/about") About
 				RouterLink(to="/experiences") Experiences
-				RouterLink(to="/playground") Playground
+				//RouterLink(to="/playground") Playground
 	main
 		NuxtPage
 </template>
 
 <style scoped lang="scss">
-
-//@import url("~/assets/css/main.css");
 
 .layout {
 	--header-height: 80px;
@@ -89,8 +87,7 @@ header {
 	line-height: 1.5;
 	text-align: center;
 	border-bottom: 1px solid var(--color-border);
-	backdrop-filter: blur(30px) /* brightness(80%)*/
-;
+	backdrop-filter: blur(30px) /* brightness(80%)*/;
 
 	nav {
 		//font-size: 12px;

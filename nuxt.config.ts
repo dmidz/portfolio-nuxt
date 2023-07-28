@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   // devtools: { enabled: true },
   modules: [
+    [ '@nuxt/image', {}],
     ['@nuxtjs/google-fonts', {
       families: {
         'Rajdhani': { 
@@ -24,4 +25,10 @@ export default defineNuxtConfig({
       }
     }]
   ],
+  css: [
+    '~/assets/css/themes/vela-green.css'
+  ],
+  build: {
+    transpile: [ 'primevue' ]
+  },
 });

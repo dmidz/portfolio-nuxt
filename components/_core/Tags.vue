@@ -11,7 +11,7 @@ ul.tags
 	li.tag(v-for="(tag, index) in props.tags" :key="index") {{ tag }}
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .tags {
 	display: flex;
 	flex-direction: row;
