@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Tags from '@/components/_core/Tags.vue';
-import Button from 'primevue/button';
+import PicDisplayer from '@/components/_core/PicDisplayer.vue';
 
 </script>
 
@@ -11,7 +11,7 @@ section
 		.desc
 			p Hello !
 				br
-				| I am David, Senior Fullstack Developer, currently working as freelancer, with 20 years experience.
+				| I am David, Senior Fullstack Developer with 20 years experience, currently working as freelancer.
 				br
 				| Crafting efficient and reliable web interfaces, easy to use, easy to evolve and easy to maintain.
 				| Finding out the right balance between time to market and technical debt.
@@ -27,11 +27,17 @@ section
 
 	.work
 		h2 Current Work
-		Button Hello :)
-		.pics
-			NuxtImg(src="/img/trade-orders.png" width="280" )
-			NuxtImg(src="/img/trade-orders.png" width="280" )
-			NuxtImg(src="/img/trade-orders.png" width="280" )
+		PicDisplayer
+			.pics
+				.pic
+					NuxtImg(src="/img/work/trade-orders.png" preset="workThumb" width="280" height="112" loading="lazy"
+						alt="Trade orders & User assets" )
+				.pic
+					NuxtImg(src="/img/work/market-tab.png" preset="workThumb" width="280" height="112" loading="lazy"
+						alt="Market tab")
+				.pic
+					NuxtImg(src="/img/work/market-alert-edit.png" preset="workThumb" width="280" height="112" loading="lazy"
+						alt="Market alert edition" )
 </template>
 
 <style lang="scss">
@@ -42,8 +48,6 @@ main {
 		margin-bottom: 20px;
 
 		img {
-			//width: 150px;
-			//height: auto;
 			margin-left: 80px;
 			border-radius: 2px;
 		}
@@ -53,9 +57,6 @@ main {
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
-		img {
-			border: 1px solid #222222;
-		}
 	}
 }
 </style>

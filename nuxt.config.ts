@@ -2,11 +2,21 @@
 export default defineNuxtConfig({
   // devtools: { enabled: true },
   modules: [
-    [ '@nuxt/image', {}],
+    [ '@nuxt/image', {
+      presets: {
+        workThumb: {
+          modifiers: {
+            // format: 'png',
+            width: 278,
+            height: 110,
+          }
+        }
+      },
+    }],
     ['@nuxtjs/google-fonts', {
       families: {
         'Rajdhani': { 
-          wght: [ 300 ],
+          wght: [ 400 ],
         },
         // Offside: true,
         // Croissant+One: true,
@@ -26,7 +36,7 @@ export default defineNuxtConfig({
     }]
   ],
   css: [
-    '~/assets/css/themes/vela-green.css'
+    '~/assets/css/themes/vela-green.scss'
   ],
   build: {
     transpile: [ 'primevue' ]

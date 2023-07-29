@@ -1,5 +1,26 @@
 <script setup lang="ts">
 import '~/assets/css/main.scss';
+import 'primeicons/primeicons.css';
+
+import { ref, provide } from 'vue';
+import type { DialogPassThroughOptions } from 'primevue/dialog';
+
+//__
+const headHeight = ref( 80 );
+
+const dialogsProps = ref<DialogPassThroughOptions>( {
+	root: {
+		style: {
+			// 'margin': `10px`,
+			// 'max-height': '100%',
+			// 'margin-top': `${ headHeight.value }px`,
+		}
+	},
+	// root: ( options ) => ({
+	// 	style: `margin-top:${headHeight.value}px`,
+	// })
+} );
+provide( 'dialogsProps', dialogsProps );
 
 </script>
 
@@ -69,6 +90,9 @@ import '~/assets/css/main.scss';
 		nav {
 			display: flex;
 			flex-direction: row;
+			a {
+				text-transform: uppercase;
+			}
 		}
 	}
 
