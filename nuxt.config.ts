@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // devtools: { enabled: true },
+  runtimeConfig: {
+    appName: 'DMidz Website',
+    mailerAuthUser: null,
+    mailerAuthPass: null,
+    mailerTo: null,
+  },
   modules: [
     [ '@nuxt/image', {
       presets: {
@@ -16,7 +22,7 @@ export default defineNuxtConfig({
     ['@nuxtjs/google-fonts', {
       families: {
         'Rajdhani': { 
-          wght: [ 400 ],
+          wght: [ 400, 600, 800 ],
         },
         // Offside: true,
         // Croissant+One: true,

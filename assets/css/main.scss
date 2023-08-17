@@ -1,7 +1,5 @@
 @import './base.css';
 
-
-
 body {
   display: flex;
   flex-direction: column;
@@ -55,19 +53,20 @@ main {
     font-weight: 100;
     padding-left: 1.5rem;
     margin-bottom: 1em;
-    margin-top: 1.5em;
     border-left: 3px solid rgba(255, 255, 255, 0.2);
   }
 
   h3 {
     font-size: 1rem;
     margin-top: 8px;
+    margin-bottom: 4px;
   }
 }
 
 .pic {
   display: flex;
   flex-direction: row;
+  border-radius: 4px;
 
   &:after {
     content: "";
@@ -79,9 +78,17 @@ main {
     border: 1px solid #222222;
     z-index: 10;
     pointer-events: none;
+    border-radius: 4px;
+  }
+  
+  &.bt:hover:after {
+    border-color: var(--primary-color);
   }
 }
 
+.bt {
+  cursor: pointer;
+}
 /*
 :root {
   .pic-diplayer-dialog {

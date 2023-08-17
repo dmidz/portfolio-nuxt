@@ -5,7 +5,7 @@ import PicDisplayer from '@/components/_core/PicDisplayer.vue';
 </script>
 
 <template lang="pug">
-section
+section.page-home
 	h1 About
 	.pres
 		.desc
@@ -29,19 +29,19 @@ section
 		h2 Current Work
 		PicDisplayer
 			.pics
-				.pic
+				.pic.bt
 					NuxtImg(src="/img/work/trade-orders.png" preset="workThumb" width="280" height="112" loading="lazy"
 						alt="Trade orders & User assets" )
-				.pic
+				.pic.bt
 					NuxtImg(src="/img/work/market-tab.png" preset="workThumb" width="280" height="112" loading="lazy"
 						alt="Market tab")
-				.pic
+				.pic.bt
 					NuxtImg(src="/img/work/market-alert-edit.png" preset="workThumb" width="280" height="112" loading="lazy"
 						alt="Market alert edition" )
 </template>
 
-<style lang="scss">
-main {
+<style lang="scss" scoped>
+.page-home {
 	.pres {
 		display: flex;
 		flex-direction: row;
@@ -51,6 +51,10 @@ main {
 			margin-left: 80px;
 			border-radius: 2px;
 		}
+	}
+	
+	.work {
+		margin-top: 2rem;
 	}
 
 	.pics {

@@ -3,7 +3,7 @@ import Tags from '@/components/_core/Tags.vue';
 </script>
 
 <template lang="pug">
-section
+section.page-experiences
 	h1 Last Experiences
 	.exp-item
 		h2 Jan. 2021 - May 2022 / Senior Frontend developer / 
@@ -83,7 +83,7 @@ section
 </template>
 
 <style lang="scss">
-main {
+.page-experiences {
 	.exp-item {
 		padding-top: 0.5rem;
 		padding-bottom: 2rem;

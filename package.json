@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "portfolio-nuxt",
   "private": true,
   "version": "0.0.1",
   "author": "david@dmidz.com",
@@ -27,7 +27,10 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.2.1",
+    "nodemailer": "^6.9.4",
     "primeicons": "^6.0.1",
-    "primevue": "^3.31.0"
+    "primevue": "^3.31.0",
+    "vee-validate": "^4.11.1",
+    "yup": "^1.2.0"
   }
 }

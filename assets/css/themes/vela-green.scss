@@ -1730,10 +1730,12 @@ $surface-card: #131516;
   color: #212529;
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .p-button:enabled:hover {
   //background: #6abd6e;
@@ -5384,7 +5386,10 @@ $surface-card: #131516;
   border-radius: 3px;
 }
 .p-message .p-message-wrapper {
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1rem;
+}
+.p-message-wrapper {
+  justify-content: center;
 }
 .p-message .p-message-close {
   width: 2rem;
@@ -5451,7 +5456,7 @@ $surface-card: #131516;
 }
 .p-message .p-message-text {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .p-message .p-message-icon {
   font-size: 1.5rem;
