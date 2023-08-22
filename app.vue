@@ -6,7 +6,7 @@ import { ref, provide } from 'vue';
 import type { DialogPassThroughOptions } from 'primevue/dialog';
 
 //__
-const headHeight = ref( 80 );
+// const headHeight = ref( 80 );
 
 const dialogsProps = ref<DialogPassThroughOptions>( {
 	root: {
@@ -27,13 +27,12 @@ provide( 'dialogsProps', dialogsProps );
 <template lang="pug">
 .layout
 	header
-		//.header-content
 		h1 David MARTIN // Frontend Developper
 		nav
-			RouterLink(to="/") Home
-			RouterLink(to="/experiences") Experiences
-			//RouterLink(to="/playground") Playground
-			RouterLink(to="/contact") Contact
+			NuxtLink(to="/") Home
+			NuxtLink(to="/experiences") Experiences
+			NuxtLink(to="/playground") Playground
+			NuxtLink(to="/contact") Contact
 	main
 		NuxtPage
 </template>

@@ -82,7 +82,7 @@ section.page-experiences
 				Tags.stack(:tags="['Dojo.js','HTML 5 (Twig)','CSS3','PHP (Symfony)','IIS 7.5','MsSQL']")
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page-experiences {
 	.exp-item {
 		padding-top: 0.5rem;

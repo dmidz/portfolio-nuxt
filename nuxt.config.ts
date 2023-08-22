@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     mailerTo: null,
   },
   modules: [
+    [ '@tresjs/nuxt' ],
     [ '@nuxt/image', {
       presets: {
         workThumb: {
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
     ['@nuxtjs/google-fonts', {
       families: {
         'Rajdhani': { 
-          wght: [ 400, 600, 800 ],
+          wght: [ 100, 400, 600, 800 ],
         },
         // Offside: true,
         // Croissant+One: true,

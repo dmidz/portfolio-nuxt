@@ -107,4 +107,11 @@ body::-webkit-scrollbar-thumb, .scrollbar-thin::-webkit-scrollbar-thumb {
   flex-direction: column;
 }
 
-/*__ */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+

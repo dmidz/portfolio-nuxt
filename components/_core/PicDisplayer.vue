@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, withDefaults, inject, computed, watch } from 'vue';
+import { ref, onMounted, withDefaults, watch } from 'vue';
 import Dialog from 'primevue/dialog';
 import Button from 'primevue/button';
-// import type { DialogPassThroughOptions } from 'primevue/dialog';
 import { useEventListener } from '@vueuse/core';
 
 //__
@@ -13,8 +12,6 @@ const props = withDefaults( defineProps<{
 	triggerSelector: 'img',
 	replOriginSrc: '_ipx/s_280x112/'
 } );
-
-// const globalDialogsProps: DialogPassThroughOptions = inject( 'dialogsProps' );
 
 const elRoot = ref<Element>();
 const elImg = ref<Element>();
