@@ -86,9 +86,9 @@ function onPause(){
 
 function onWindowFocus(){
 	// console.log('onWindowFocus', wasPlaying );
-	if( wasPlaying ){
-		audioElement.play();
-	}
+	// if( wasPlaying ){//__ bug if focus on clicking play: play then click pause
+	// 	audioElement.play();
+	// }
 }
 
 function onWindowBlur(){

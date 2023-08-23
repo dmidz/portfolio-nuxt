@@ -10,8 +10,8 @@ const props = withDefaults( defineProps<{
 	frequencyBinCount?: number,
 	// frequenciesData?: Uint8Array,
 }>(), {
-	barsSize: [.5,512,.1],
-	barsGap: 3,
+	barsSize: [1,512,.1],
+	barsGap: 5,
 	frequencyBinCount: 64,
 	// frequenciesData: [],
 });
@@ -60,8 +60,8 @@ function animate( freqData: Uint8Array ){
 		// }
 	}
 
-	mainRef.value.rotation.z += sceneVRot;
-	mainRef.value.rotation.y -= sceneVRot*.3;
+	mainRef.value.rotation.z += .0007;//sceneVRot;
+	// mainRef.value.rotation.y -= sceneVRot*.3;
 	// mainRef.rotation.x += -sceneVRot/5;
 }
 
@@ -102,7 +102,7 @@ watch([() => cameraRef.value], ( cam ) => {
 
 <template lang="pug">
 TresCanvas(:useLegacyLights="false")
-	TresPerspectiveCamera( ref="cameraRef" :position="[0, 0, 200]" :look-at="[0, 0, 0]" :fov="75" :near="0.1" :far="10000")
+	TresPerspectiveCamera( ref="cameraRef" :position="[0, 0, 400]" :look-at="[0, 0, 0]" :fov="75" :near="0.1" :far="20000")
 	TresAmbientLight(:intensity="1")
 	CameraControls
 	//TresGridHelper(:args="[30,10]")
@@ -110,7 +110,7 @@ TresCanvas(:useLegacyLights="false")
 		//TresMesh(:scale="[10000,.3,.3]")
 			TresBoxGeometry(:args="[1,1,1]")
 			TresMeshNormalMaterial(:opacity=".5" :transparent="true")
-		TresGroup(ref="barsRef")
+		TresGroup(ref="barsRef" :rotation-x="-.3" :rotation-y=".5")
 			TresMesh(v-for="(e , i) in frequencyBinCount" :scale="[barsSize[0],.3,barsSize[2]]"
 					:translate-x="i*barsGap")
 				TresBoxGeometry(:args="[1,1,1]")
