@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import ProgressSpinner from 'primevue/progressspinner';
+
 const props = defineProps<{
 	active?: boolean,
 }>();
@@ -9,7 +11,7 @@ const props = defineProps<{
 <template lang="pug">
 .ctn-loading(:class="{ active }")
 	.overlay
-		i(class="pi pi-spin pi-spinner")
+		ProgressSpinner(animationDuration=".5s")
 	.loading-content
 		slot
 </template>

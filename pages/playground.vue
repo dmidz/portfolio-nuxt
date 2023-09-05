@@ -1,10 +1,22 @@
 <script setup lang="ts">
 
+const runtimeConfig = useRuntimeConfig();
+const title = `Playground | ${ runtimeConfig.appName }`;
+const description = `Here is my small dev playground.`;
+
+useServerSeoMeta( {
+	title,
+	ogTitle: title,
+	description,
+	ogDescription: description,
+	// ogImage: 'https://example.com/image.png',
+	// twitterCard: 'summary_large_image',
+} );
+
 onErrorCaptured( () => {
 	console.log( 'errorCaptured' );
 	// failed = true;
 } );
-
 
 </script>
 

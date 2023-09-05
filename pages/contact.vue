@@ -9,10 +9,24 @@ import Message from 'primevue/message';
 
 import FormInput from '@/components/_core/FormInput.vue';
 import Loading from '@/components/_core/Loading.vue';
+import PageNav from '@/components/_core/PageNav.vue';
 
 type Status = 'pending' | 'success' | 'error';
 
 //____
+const runtimeConfig = useRuntimeConfig();
+const title = `Get In Touch | ${ runtimeConfig.appName }`;
+const description = `Feel free to contact me for more information or work demo.`;
+
+useServerSeoMeta( {
+	title,
+	ogTitle: title,
+	description,
+	ogDescription: description,
+	// ogImage: 'https://example.com/image.png',
+	// twitterCard: 'summary_large_image',
+} );
+
 const { errors, handleSubmit } = useForm( {
 	validationSchema: yup.object( {
 		name: yup.string().required(),
@@ -36,12 +50,12 @@ const onSubmit = handleSubmit( async ( values ) => {
 			method: 'POST',
 			body: values,
 		} );
-		console.log( 'onSubmit', values, req.response );
+		// console.log( 'onSubmit', values, req.response );
 		req.status.value = 'success';
 	}catch( err ){
 		req.error.value = err.statusMessage || 'Mail sending failed';
 		req.status.value = 'error';
-		console.log( 'onErrors', { err } );
+		// console.log( 'onErrors', { err } );
 	}
 });
 
@@ -51,6 +65,7 @@ const onSubmit = handleSubmit( async ( values ) => {
 section.page-contact
 	h1 Get in touch
 	Loading(:active="req.status.value==='pending'")
+		p Feel free to contact me for more info or request work demo, I will respond before 2 working days.
 		Message(v-if="req.status.value==='success'" severity="success" :closable="false") Thank you for your message :)
 		form(v-else @submit="onSubmit")
 			FormInput(inputKey="name" label="Name" :inputComp="InputText")
@@ -61,9 +76,16 @@ section.page-contact
 				Message(v-if="req.error.value" severity="warn" :closable="false") {{ req.error.value }}
 				.bts
 					Button(type="submit") Submit
+
+PageNav(:prev="{label:'Experiences',link:'/experiences'}")
 </template>
 
 <style lang="scss" scoped>
+p {
+	margin-bottom: 1.5em;
+	text-align: center;
+}
+
 form {
 	.xz {
 		display: none;

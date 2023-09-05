@@ -4,6 +4,7 @@ import 'primeicons/primeicons.css';
 
 import { ref, provide } from 'vue';
 import type { DialogPassThroughOptions } from 'primevue/dialog';
+import Button from 'primevue/button';
 
 //__
 // const headHeight = ref( 80 );
@@ -16,23 +17,28 @@ const dialogsProps = ref<DialogPassThroughOptions>( {
 			// 'margin-top': `${ headHeight.value }px`,
 		}
 	},
-	// root: ( options ) => ({
-	// 	style: `margin-top:${headHeight.value}px`,
-	// })
 } );
+
 provide( 'dialogsProps', dialogsProps );
 
+function openLink( url: string ){
+	window.open( url, '_blank' );
+}
+// 
 </script>
 
 <template lang="pug">
 .layout
 	header
-		h1 David MARTIN // Frontend Developper
+		h1 David MARTIN // Fullstack Developper
 		nav
-			NuxtLink(to="/") Home
+			NuxtLink(to="/") About
 			NuxtLink(to="/experiences") Experiences
-			NuxtLink(to="/playground") Playground
+			//NuxtLink(to="/playground") Playground
 			NuxtLink(to="/contact") Contact
+		.social
+			Button(@click="openLink('https://github.com/dmidz')" icon="pi pi-github" aria-label="Github profile" rounded text)
+			Button(@click="openLink('https://www.linkedin.com/in/david-martin-245a2515/')" icon="pi pi-linkedin" aria-label="LinkedIn profile" rounded text)
 	main
 		NuxtPage
 </template>
@@ -112,6 +118,13 @@ provide( 'dialogsProps', dialogsProps );
 				}
 			}
 
+		}
+		
+		.social {
+			margin: 0 8px;
+			display: flex;
+			flex-direction: row;
+			gap: 4px;
 		}
 	}
 

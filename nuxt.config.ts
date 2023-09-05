@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   // devtools: { enabled: true },
   runtimeConfig: {
-    appName: 'DMidz Website',
+    appName: 'David MARTIN, Fullstack Developper',
     mailerAuthUser: null,
     mailerAuthPass: null,
     mailerTo: null,
