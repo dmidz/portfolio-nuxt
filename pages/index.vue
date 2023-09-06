@@ -42,17 +42,25 @@ section.page-home
 
 	.work
 		h2 Current Work
-		PicDisplayer
-			.pics
+		p Trendastic: a web application allowing to manage trading spot orders over multiple exchanges ( Binance, etc. ). 
+			| A market tab shows you the most hourly hot symbols, and where you can manage alerts ( price moves, volume, etc. ).
+			| There is also a demo mode ( paper trading ) with fake wallet initalized with 1000 USDT so you can try trading
+			|  in real market conditions but without real money ( contests soon ).
+		PicDisplayer.pics
 				.pic.bt
-					NuxtImg(src="/img/work/trade-orders.png" preset="workThumb" width="280" height="112" loading="lazy"
+					NuxtImg(src="/img/work/trade-orders.png" preset="workThumb" width="280" height="107" loading="lazy"
 						alt="Trade orders & User assets" )
 				.pic.bt
-					NuxtImg(src="/img/work/market-tab.png" preset="workThumb" width="280" height="112" loading="lazy"
+					NuxtImg(src="/img/work/market-tab.png" preset="workThumb" width="280" height="107" loading="lazy"
 						alt="Market tab")
 				.pic.bt
-					NuxtImg(src="/img/work/market-alert-edit.png" preset="workThumb" width="280" height="112" loading="lazy"
+					NuxtImg(src="/img/work/market-alert-edit.png" preset="workThumb" width="280" height="107" loading="lazy"
 						alt="Market alert edition" )
+		p Feel free to 
+			NuxtLink(to="/contact") request a demo 
+			| for testing it live or get more infos !
+			br
+			| Demo mode only requires registration email, but you will able to test all features.
 PageNav(:next="{label:'Experiences',link:'/experiences'}")
 </template>
 
@@ -77,6 +85,7 @@ PageNav(:next="{label:'Experiences',link:'/experiences'}")
 	flex-direction: row;
 	justify-content: space-between;
 	gap: 10px;
+	margin-bottom: 10px;
 }
 
 </style>

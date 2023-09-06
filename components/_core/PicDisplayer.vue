@@ -7,10 +7,10 @@ import { useEventListener } from '@vueuse/core';
 //__
 const props = withDefaults( defineProps<{
 	triggerSelector?: string,
-	replOriginSrc?: string,
+	replOriginSrc?: string | RegExp,
 }>(), {
 	triggerSelector: 'img',
-	replOriginSrc: '_ipx/s_280x112/'
+	replOriginSrc: /_ipx\/s_[0-9]+x[0-9]+\//,
 } );
 
 const elRoot = ref<Element>();
@@ -32,9 +32,8 @@ onMounted( () => {
 			return;
 		}
 		
-		elImg.value = ev.target;
 		visible.value = true;
-		imgIndex.value = Array.prototype.indexOf.call( els.value, ev.target );
+		setCurrent( Array.prototype.indexOf.call( els.value, ev.target ) );
 		
 		// console.log( 'click', [ev.target], ev.target.matches( props.triggerSelector ) );
 	} );
@@ -43,6 +42,7 @@ onMounted( () => {
 function setCurrent( index ){
 	imgIndex.value = Math.max( 0, Math.min( els.value.length, index ));
 	elImg.value = els.value.item( index );
+	// console.log('setCurrent', elImg.value?.src );
 }
 
 function handleHide(){
@@ -57,6 +57,8 @@ function handleNext(){
 	setCurrent( imgIndex.value+1 );
 }
 
+//__ TODO: dynamic size ( instead 1280x491 ) either on PicDisplayer, either also on data-width from original pic
+
 </script>
 
 <template lang="pug">
@@ -69,7 +71,7 @@ function handleNext(){
 				Button(@click="handlePrev" :disabled="!imgIndex" aria-label="Previous" icon="pi pi-angle-left" text rounded)
 				.pager {{ imgIndex+1 }} / {{ els.value.length }}
 				Button(@click="handleNext" :disabled="imgIndex>=els.value.length-1" aria-label="Next" icon="pi pi-angle-right" text rounded)
-		NuxtImg(v-if="elImg" :src="elImg.src.replace(`${elImg.baseURI}${props.replOriginSrc}`,'')" width="1280" height="509" )
+		NuxtImg(v-if="elImg" :src="elImg.src.replace( replOriginSrc,'')" width="1280" height="491" )
 </template>
 
 <style lang="scss">
