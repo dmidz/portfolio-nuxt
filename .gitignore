@@ -1,4 +1,5 @@
 # Nuxt dev/build outputs
+_deploy
 .output
 .nuxt
 .nitro
