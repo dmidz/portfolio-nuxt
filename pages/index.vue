@@ -36,7 +36,7 @@ section.page-home
 		img(src="/img/david-martin.jpg" width="150" height="150")
 	h2 Pro Level Skills
 	h3 Frontend
-	Tags(:tags="['Nuxt','Vue.js','React','Typescript','Javascript','HTML & (S)CSS','Jest']")
+	Tags(:tags="['Nuxt','Vue.js 3 ( & 2 )','React','Typescript','Javascript','HTML & (S)CSS','Jest']")
 	h3 Backend
 	Tags(:tags="['Node.js','Fastify','Hapi','Sequelize','Tap']")
 
