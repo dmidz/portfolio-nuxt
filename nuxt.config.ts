@@ -50,9 +50,16 @@ export default defineNuxtConfig({
   },
   nitro: {
     output: {
-      dir: '../_deploy/.output',
-      serverDir: '../_deploy/.output/server',
-      publicDir: '../_deploy/.output/public'
-    }
+      dir: '_deploy/.output',
+      serverDir: '_deploy/.output/server',
+      publicDir: '_deploy/.output/public'
+    },
+    // timing: true,
+    // logLevel: 4,
+    // hooks: {
+    //   request: ( event ) => {
+    //     console.log( 'Hook request', event.path );
+    //   }
+    // }
   }
 });
