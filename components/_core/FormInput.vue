@@ -7,6 +7,7 @@ const props = defineProps<{
 	inputKey: string,
 	inputComp: Component,
 	label?: string,
+	required?: boolean,
 }>();
 
 const attrs = useAttrs();
@@ -15,7 +16,7 @@ const { value, errorMessage } = useField( () => props.inputKey );
 </script>
 
 <template lang="pug">
-.form-input
+.form-input(:class="{required}")
 	label {{ label }}
 	component(:is="inputComp" v-model="value" v-bind="attrs" :class="{ 'p-invalid': !!errorMessage }")
 	small(class="p-error") {{ errorMessage }}
@@ -49,6 +50,13 @@ const { value, errorMessage } = useField( () => props.inputKey );
 
 	:deep(textarea) {
 		padding-top: 11px;
+	}
+	
+	&.required {
+		label:after {
+			content: " *";
+			color:var(--primary-color);
+		}
 	}
 }
 </style>

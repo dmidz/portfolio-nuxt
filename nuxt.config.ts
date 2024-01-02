@@ -48,4 +48,22 @@ export default defineNuxtConfig({
   build: {
     transpile: [ 'primevue' ]
   },
+  nitro: {
+    output: {
+      dir: '_deploy/.output',
+      serverDir: '_deploy/.output/server',
+      publicDir: '_deploy/.output/public'
+    },
+    prerender: {
+      crawlLinks: true,
+      // routes: [ '/robots.txt' ]
+    },
+    // timing: true,
+    // logLevel: 4,
+    // hooks: {
+    //   request: ( event ) => {
+    //     console.log( 'Hook request', event.path );
+    //   }
+    // }
+  }
 });

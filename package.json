@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "author": "david@dmidz.com",
   "license": "UNLICENSED",
-  "description": "Portfolio Nuxt 2023",
+  "description": "Portfolio Nuxt 2023 ( dev )",
   "scripts": {
-    "start": "node ./.output/server/index.mjs",
+    "start": "PORT=3001 node ./_deploy/.output/server/index.mjs",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -32,12 +32,12 @@
     "@nuxtjs/google-fonts": "^3.0.2",
     "@types/node": "^18.17.0",
     "@types/three": "^0.155.0",
-    "nuxt": "^3.6.5",
+    "nuxt": "^3.9.0",
     "pug": "^3.0.2",
     "sass": "^1.64.1"
   },
   "engines": {
     "npm": ">=8.0.0 <10.0.0",
-    "node": ">=16.0.0 <17.0.0"
+    "node": ">=16.0.0 <19.0.0"
   }
 }
