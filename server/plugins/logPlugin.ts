@@ -4,9 +4,11 @@
 
 export default defineNitroPlugin( ( nitroApp ) => {
 	// console.log( '[logPlugin] init', nitroApp.h3App.stack );
-	nitroApp.hooks.hook( 'request', ( event ) => {
-		console.log( '[logPlugin] request', event.path );
-	} );
+	//__ uncomment request hook below to log all requests
+	// nitroApp.hooks.hook( 'request', ( event ) => {
+	// 	console.log( '[logPlugin] request', event.path );
+	// } );
+
 	// nitroApp.hooks.hook( 'beforeResponse', ( event ) => {
 	// 	console.log( '[logPlugin] beforeResponse', event.path );
 	// } );
