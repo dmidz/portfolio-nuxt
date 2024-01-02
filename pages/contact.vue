@@ -65,17 +65,17 @@ const onSubmit = handleSubmit( async ( values ) => {
 section.page-contact
 	h1 Get in touch
 	Loading(:active="req.status.value==='pending'")
-		p Feel free to contact me for more info or request work demo, I will respond before 2 working days.
+		p Feel free to contact me for more info or request work demo.
 		Message(v-if="req.status.value==='success'" severity="success" :closable="false") Thank you for your message :)
 		form(v-else @submit="onSubmit")
-			FormInput(inputKey="name" label="Name" :inputComp="InputText")
-			FormInput(inputKey="company" label="Company" :inputComp="InputText" class="xz")
-			FormInput(inputKey="email" label="eMail" :inputComp="InputText" type="email")
-			FormInput(inputKey="message" label="Message" :inputComp="Textarea" rows="10")
+			FormInput(inputKey="name" label="Name" :inputComp="InputText" required)
+			FormInput(inputKey="company" label="Company" :inputComp="InputText" class="xz" required)
+			FormInput(inputKey="email" label="eMail" :inputComp="InputText" type="email" required)
+			FormInput(inputKey="message" label="Message" :inputComp="Textarea" rows="10" required)
 			.foot
 				Message(v-if="req.error.value" severity="warn" :closable="false") {{ req.error.value }}
 				.bts
-					Button(type="submit") Submit
+					Button(type="submit" label="Submit")
 
 PageNav(:prev="{label:'Experiences',link:'/experiences'}")
 </template>
