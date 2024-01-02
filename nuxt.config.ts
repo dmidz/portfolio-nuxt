@@ -54,6 +54,10 @@ export default defineNuxtConfig({
       serverDir: '_deploy/.output/server',
       publicDir: '_deploy/.output/public'
     },
+    prerender: {
+      crawlLinks: true,
+      // routes: [ '/robots.txt' ]
+    },
     // timing: true,
     // logLevel: 4,
     // hooks: {
