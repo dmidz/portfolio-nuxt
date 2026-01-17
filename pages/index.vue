@@ -5,7 +5,7 @@ import PageNav from '@/components/_core/PageNav.vue';
 
 //__
 const runtimeConfig = useRuntimeConfig();
-const title = `About | ${ runtimeConfig.appName }`;
+const title = `About | ${ runtimeConfig.public.appName }`;
 const description = `Crafting efficient and reliable web interfaces, easy to use, easy to evolve and easy to maintain.`;
 
 useServerSeoMeta( {

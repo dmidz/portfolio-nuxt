@@ -3,20 +3,20 @@ import Mailer from '../Mailer';
 
 const nl = "\n";
 
-const { appName, mailerAuthUser, mailerAuthPass, mailerTo } = useRuntimeConfig();
-if( !appName?.length){ 					throw new Error('config.appName is required.')}
-if( !mailerAuthUser?.length){ 	throw new Error('config.mailerAuthUser is required.')}
-if( !mailerAuthPass?.length){ 	throw new Error('config.mailerAuthPass is required.')}
-if( !mailerTo?.length){ 				throw new Error('config.mailerTo is required.')}
+const conf = useRuntimeConfig();
+if( !conf.public?.appName?.length){ throw new Error('config.appName is required.')}
+if( !conf.mailerAuthUser?.length){ 	throw new Error('config.mailerAuthUser is required.')}
+if( !conf.mailerAuthPass?.length){ 	throw new Error('config.mailerAuthPass is required.')}
+if( !conf.mailerTo?.length){ 				throw new Error('config.mailerTo is required.')}
 // console.log('config', mailerAuthUser );
 
 const mailer = Mailer( {
-	fromName: `${ appName }`,
+	fromName: `${ conf.appName }`,
 	transport: {
 		service: 'gmail',
 		auth: {
-			user: `${mailerAuthUser}`,
-			pass: `${mailerAuthPass}`,
+			user: `${ conf.mailerAuthUser}`,
+			pass: `${ conf.mailerAuthPass}`,
 		},
 	},
 });
@@ -37,7 +37,7 @@ export default defineEventHandler( async ( event ) => {
 	if(!message){ throw createError( { statusCode: 400, statusMessage: 'message is required.' } );}
 
 	try {
-		await mailer.send( mailerTo, 'Contact Form',
+		await mailer.send( conf.mailerTo, 'Contact Form',
 			`Name: ${name}` + nl +
 			`eMail: ${email}` + nl +
 			`Message:` + nl +

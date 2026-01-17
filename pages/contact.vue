@@ -15,7 +15,7 @@ type Status = 'pending' | 'success' | 'error';
 
 //____
 const runtimeConfig = useRuntimeConfig();
-const title = `Get In Touch | ${ runtimeConfig.appName }`;
+const title = `Get In Touch | ${ runtimeConfig.public.appName }`;
 const description = `Feel free to contact me for more information or work demo.`;
 
 useServerSeoMeta( {

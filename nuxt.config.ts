@@ -1,14 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // devtools: { enabled: true },
+  // compatibilityDate: '2026-01-17',
   runtimeConfig: {
-    appName: 'David MARTIN, Fullstack Developper',
-    mailerAuthUser: null,
-    mailerAuthPass: null,
-    mailerTo: null,
+    mailerAuthUser: '',
+    mailerAuthPass: '',
+    mailerTo: '',
+    public: {
+      appName: 'David MARTIN, Fullstack Developper',
+    },
   },
   modules: [
-    [ '@tresjs/nuxt' ],
+    [ '@tresjs/nuxt', {} ],
     [ '@nuxt/image', {
       presets: {
         workThumb: {

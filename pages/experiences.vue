@@ -3,7 +3,7 @@ import Tags from '@/components/_core/Tags.vue';
 import PageNav from '@/components/_core/PageNav.vue';
 
 const runtimeConfig = useRuntimeConfig();
-const title = `Experiences | ${ runtimeConfig.appName }`;
+const title = `Experiences | ${ runtimeConfig.public.appName }`;
 const description = `Senior Fullstack Developer with 20 years experience, worked in various teams and environments.`;
 
 useServerSeoMeta( {
