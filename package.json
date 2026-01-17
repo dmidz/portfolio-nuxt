@@ -20,8 +20,8 @@
     "@tweakpane/plugin-essentials": "^0.2.0",
     "@vueuse/core": "^10.2.1",
     "nodemailer": "^7.0.12",
-    "primeicons": "^6.0.1",
-    "primevue": "^3.31.0",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.4",
     "three": "^0.182.0",
     "vee-validate": "^4.11.1",
     "yup": "^1.2.0"
