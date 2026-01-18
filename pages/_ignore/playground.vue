@@ -27,7 +27,6 @@ onErrorCaptured( () => {
 			li
 				NuxtLink(to="/playground/audioviz") AudioViz
 	ClientOnly
-		//Suspense
 		NuxtPage
 
 </template>
