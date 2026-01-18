@@ -11,7 +11,7 @@ if( !conf.mailerTo?.length){ 				throw new Error('config.mailerTo is required.')
 // console.log('config', mailerAuthUser );
 
 const mailer = Mailer( {
-	fromName: `${ conf.appName }`,
+	fromName: `${ conf.public.appName }`,
 	transport: {
 		service: 'gmail',
 		auth: {
@@ -44,6 +44,7 @@ export default defineEventHandler( async ( event ) => {
 			`${message}`,
 			{
 				replyTo: `${email}`,
+				from: `"${ name }" ${ email }`
 				// bcc: options.mailAdmin ? [ options.mailAdmin ] : null,
 			}
 		);

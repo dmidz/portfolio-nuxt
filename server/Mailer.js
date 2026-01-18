@@ -8,6 +8,7 @@ function Mailer ( opts = {}, done ){
 
 	const options = {
 		fromName: null,
+		subjectPrefix: '[ dmidz.com ] ',
 		transport: {
 			service: 'gmail',
 			auth: {
@@ -27,13 +28,13 @@ function Mailer ( opts = {}, done ){
 	if( options.fromName?.length ){
 		from = `"${options.fromName}" ${from}`;
 	}
-
+	
 	return {
 		send: async ( to, subject, text, _options = {} ) => {
 			const mailOptions = {
-				from,
+				from: _options.from || from,
 				to,
-				subject,
+				subject: `${options.subjectPrefix}${subject}`,
 				text,
 				..._options,
 			};
