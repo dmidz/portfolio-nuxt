@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // devtools: { enabled: true },
+  devtools: { enabled: false },
   // compatibilityDate: '2026-01-17',
   runtimeConfig: {
     mailerAuthUser: '',
@@ -43,10 +43,12 @@ export default defineNuxtConfig({
         //   ital: [ 100 ]
         // },
       }
-    }]
+    }],
   ],
   css: [
-    '~/assets/css/themes/vela-green.scss'
+    '~/assets/css/main.scss',
+    'primeicons/primeicons.css',
+    // '~/assets/css/themes/vela-green.scss'
   ],
   build: {
     transpile: [ 'primevue' ]
