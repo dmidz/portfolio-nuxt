@@ -3,6 +3,7 @@
 import { ref, provide } from 'vue';
 import type { DialogPassThroughOptions } from 'primevue/dialog';
 import Button from 'primevue/button';
+import { version } from './package.json' with { type: 'json' };
 
 //__
 // const headHeight = ref( 80 );
@@ -22,7 +23,7 @@ provide( 'dialogsProps', dialogsProps );
 function openLink( url: string ){
 	window.open( url, '_blank' );
 }
-// 
+
 </script>
 
 <template lang="pug">
@@ -39,6 +40,8 @@ function openLink( url: string ){
 			Button(@click="openLink('https://www.linkedin.com/in/david-martin-245a2515/')" icon="pi pi-linkedin" aria-label="LinkedIn profile" rounded text)
 	main
 		NuxtPage
+	footer
+		| version {{ version }}
 </template>
 
 <style lang="scss">
@@ -133,6 +136,11 @@ function openLink( url: string ){
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
+	}
+	
+	footer {
+		font-size: .9rem;
+		color:#888888;
 	}
 }
 
