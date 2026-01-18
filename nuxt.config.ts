@@ -1,14 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // devtools: { enabled: true },
+  devtools: { enabled: false },
+  // compatibilityDate: '2026-01-17',
   runtimeConfig: {
-    appName: 'David MARTIN, Fullstack Developper',
-    mailerAuthUser: null,
-    mailerAuthPass: null,
-    mailerTo: null,
+    mailerAuthUser: '',
+    mailerAuthPass: '',
+    mailerTo: '',
+    public: {
+      appName: 'David MARTIN, Fullstack Developper',
+    },
   },
   modules: [
-    [ '@tresjs/nuxt' ],
+    [ '@tresjs/nuxt', {} ],
     [ '@nuxt/image', {
       presets: {
         workThumb: {
@@ -40,10 +43,12 @@ export default defineNuxtConfig({
         //   ital: [ 100 ]
         // },
       }
-    }]
+    }],
   ],
   css: [
-    '~/assets/css/themes/vela-green.scss'
+    '~/assets/css/main.scss',
+    'primeicons/primeicons.css',
+    // '~/assets/css/themes/vela-green.scss'
   ],
   build: {
     transpile: [ 'primevue' ]

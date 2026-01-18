@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 const runtimeConfig = useRuntimeConfig();
-const title = `Playground | ${ runtimeConfig.appName }`;
+const title = `Playground | ${ runtimeConfig.public.appName }`;
 const description = `Here is my small dev playground.`;
 
 useServerSeoMeta( {

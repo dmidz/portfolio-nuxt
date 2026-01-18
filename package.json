@@ -14,30 +14,32 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@tresjs/cientos": "^3.1.0",
-    "@tresjs/nuxt": "^1.1.3",
-    "@tresjs/post-processing": "^0.3.0",
+    "@tresjs/cientos": "^5.2.3",
+    "@tresjs/nuxt": "^5.1.5",
+    "@tresjs/post-processing": "^3.2.3",
     "@tweakpane/plugin-essentials": "^0.2.0",
     "@vueuse/core": "^10.2.1",
-    "nodemailer": "^6.9.4",
-    "primeicons": "^6.0.1",
-    "primevue": "^3.31.0",
-    "three": "^0.155.0",
+    "nodemailer": "^7.0.12",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.4",
+    "three": "^0.182.0",
     "vee-validate": "^4.11.1",
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.0.0-rc.1",
+    "@nuxt/devtools": "^3.1.1",
+    "@nuxt/image": "^2.0.0",
     "@nuxtjs/google-fonts": "^3.0.2",
-    "@types/node": "^18.17.0",
-    "@types/three": "^0.155.0",
+    "@types/node": "^25.0.9",
+    "@types/three": "^0.182.0",
+    "@vue/language-plugin-pug": "^3.2.2",
+    "@vue/language-server": "^3.2.2",
     "nuxt": "^3.9.0",
     "pug": "^3.0.2",
     "sass": "^1.64.1"
   },
   "engines": {
-    "npm": ">=8.0.0 <10.0.0",
-    "node": ">=16.0.0 <19.0.0"
+    "npm": ">10.0.0",
+    "node": ">16.0.0"
   }
 }

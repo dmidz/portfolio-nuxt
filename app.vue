@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import '~/assets/css/main.scss';
-import 'primeicons/primeicons.css';
 
 import { ref, provide } from 'vue';
 import type { DialogPassThroughOptions } from 'primevue/dialog';
