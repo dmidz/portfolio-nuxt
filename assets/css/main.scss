@@ -7,26 +7,60 @@ $surface-card: #131516;
 
 :root {
 	color-scheme: light dark;
-	--font-family: 'Rajdhani', sans-serif;
+	--surface-a: #1f2d40;
+	--surface-b: #17212f;
+	--surface-c: rgba(255, 255, 255, 0.03);
+	--surface-d: #304562;
+	--surface-e: #1f2d40;
+	--surface-f: #1f2d40;
+	--text-color: rgba(255, 255, 255, 0.87);
+	--text-color-secondary: rgba(255, 255, 255, 0.6);
 	--primary-color: #{$primary-color}; //#00bd7e;
 	--primary-color-text: #212529;
-	--color-error: #ff4040;
-	--color-warn: #ffdd00;
+	--font-family: 'Rajdhani', sans-serif;
+	//--font-family:-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	--surface-0: #17212f;
+	--surface-50: #2e3744;
+	--surface-100: #454d59;
+	--surface-200: #5d646d;
+	--surface-300: #747a82;
+	--surface-400: #8b9097;
+	--surface-500: #a2a6ac;
+	--surface-600: #b9bcc1;
+	--surface-700: #d1d3d5;
+	--surface-800: #e8e9ea;
+	--surface-900: #ffffff;
+	--gray-50: #e8e9ea;
+	--gray-100: #d1d3d5;
+	--gray-200: #b9bcc1;
+	--gray-300: #a2a6ac;
+	--gray-400: #8b9097;
+	--gray-500: #747a82;
+	--gray-600: #5d646d;
+	--gray-700: #454d59;
+	--gray-800: #2e3744;
+	--gray-900: #17212f;
+	--content-padding: 1rem;
+	--inline-spacing: 0.5rem;
+	--border-radius: 3px;
 	--surface-ground: #1a1b1d; //#17212f;
 	--surface-section: #17212f;
 	--surface-card: #{$surface-card};
 	--surface-overlay: #{$surface-card};
 	--surface-border: #{$surface-border}; //#304562;
 	--surface-hover: rgba(255, 255, 255, .03);
-
+	--focus-ring: 0 0 0 1px #a7d8a9;
+	--maskbg: rgba(0, 0, 0, 0.85);
+	--highlight-bg: rgba(129, 199, 132, 0.16);
+	--highlight-text-color: rgba(255, 255, 255, 0.87);
+	--color-error: #ff4040;
+	--color-warn: #ffdd00;
 	--p-progressspinner-color-one: #73000c;
 	--p-progressspinner-color-two: #044868;
 	--p-progressspinner-color-three: #224a23;
 	--p-progressspinner-color-four: #6d5100;
 	--anim-hover-duration: 0.3s;
 	--p-icon-size: 1rem;
-	
-	//font-size: 1.25rem;
 
 	/*__ prime customization */
 	.p-component {
@@ -88,6 +122,10 @@ $surface-card: #131516;
 		border-radius: 3px;
 		font-weight: 600;
 		text-transform: uppercase;
+	}
+
+	.p-disabled, .p-component:disabled {
+		opacity: 0.4;
 	}
 
 	.p-button:enabled:hover {
@@ -370,6 +408,88 @@ $surface-card: #131516;
 		width: 1.5rem;
 		height: 1.5rem;
 	}
+
+	.p-dialog {
+		border-radius: 3px;
+		box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+		border: 1px solid var(--surface-border);
+	}
+
+	.p-dialog .p-dialog-header {
+		border-bottom: 0 none;
+		background: var(--surface-card);
+		color: rgba(255, 255, 255, 0.87);
+		padding: 1.5rem;
+		border-top-right-radius: 3px;
+		border-top-left-radius: 3px;
+	}
+
+	.p-dialog .p-dialog-header .p-dialog-title {
+		font-weight: 600;
+		font-size: 1.25rem;
+	}
+
+	.p-dialog .p-dialog-header .p-dialog-header-icon {
+		width: 2rem;
+		height: 2rem;
+		color: rgba(255, 255, 255, 0.6);
+		border: 0 none;
+		background: transparent;
+		border-radius: 50%;
+		transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+		margin-right: 0.5rem;
+	}
+
+	.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+		color: rgba(255, 255, 255, 0.87);
+		border-color: transparent;
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+		outline: 0 none;
+		outline-offset: 0;
+		box-shadow: 0 0 0 1px #a7d8a9;
+	}
+
+	.p-dialog .p-dialog-header .p-dialog-header-icon:last-child {
+		margin-right: 0;
+	}
+
+	.p-dialog .p-dialog-content {
+		background: var(--surface-card);
+		color: rgba(255, 255, 255, 0.87);
+		padding: 0 1.5rem 2rem 1.5rem;
+	}
+
+	.p-dialog .p-dialog-content:last-of-type {
+		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+
+	.p-dialog .p-dialog-footer {
+		border-top: 0 none;
+		background: var(--surface-card);
+		color: rgba(255, 255, 255, 0.87);
+		padding: 0 1.5rem 1.5rem 1.5rem;
+		text-align: right;
+		border-bottom-right-radius: 3px;
+		border-bottom-left-radius: 3px;
+	}
+
+	.p-dialog .p-dialog-footer button {
+		margin: 0 0.5rem 0 0;
+		width: auto;
+	}
+
+	.p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+		font-size: 2rem;
+	}
+
+	.p-dialog.p-confirm-dialog .p-confirm-dialog-message:not(:first-child) {
+		margin-left: 1rem;
+	}
+
 }
 
 body {

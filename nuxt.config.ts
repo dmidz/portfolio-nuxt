@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  // compatibilityDate: '2026-01-17',
+  experimental: { appManifest: false },
+  compatibilityDate: '2026-01-23',
   runtimeConfig: {
     mailerAuthUser: '',
     mailerAuthPass: '',
