@@ -35,14 +35,15 @@ section.page-home
 				| and also as a freelancer building corporate websites & eshops for small companies in hotel business or industry.
 		img(src="/img/david-martin.jpg" width="150" height="150")
 	h2 Pro Level Skills
-	h3 Frontend
+	h4 Frontend
 	Tags(:tags="['Nuxt','Vue.js 3 ( & 2 )','React','Typescript','Javascript','HTML & (S)CSS','Jest']")
-	h3 Backend
+	h4 Backend
 	Tags(:tags="['Node.js','Fastify','Hapi','Sequelize','Tap']")
 
 	.work
 		h2 Current Work
-		p Trendastic: a web application allowing to manage trading spot orders over multiple exchanges ( Binance, etc. ). 
+		h3 Trendastic
+		p Web application allowing to manage trading spot orders over multiple exchanges ( Binance, etc. ). 
 			| A market tab shows you the most hourly hot symbols, and where you can manage alerts ( price moves, volume, etc. ).
 			| There is also a demo mode ( paper trading ) with fake wallet initalized with 1000 USDT so you can try trading
 			|  in real market conditions but without real money ( contests soon ).
@@ -61,6 +62,22 @@ section.page-home
 			| for testing it live or get more infos !
 			br
 			| Demo mode only requires registration email, but you will able to test all features.
+		h4 Frontend
+		Tags(:tags="['Vite.js','Vue.js 3','Typescript','Socket.io','HTML & SCSS']")
+		h4 Backend
+		Tags(:tags="['Node.js','Fastify','Sequelize','Postgresql','Jelastic cloud']")
+		br
+		h3 Ticks Chart
+		p 
+			a(href="https://github.com/dmidz/tickschart" target="_blank") Open source modern library 
+			| chart for displaying & interaction of intensive data with native HTML Canvas. 
+			| Written with Typescript, framework agnostic, can be easily integrated in your favorite tool such Vuejs, React, etc or vanilla JS. 
+			| It also includes a (re)player and an extensible indicator system such MAs, volumes, OBV, etc.  
+		PicDisplayer.pics
+				.pic.bt
+					NuxtImg(src="/img/work/tickschart.png" preset="workThumb" width="800" height="430" loading="lazy"
+						alt="Interactive ticks chart" )
+		Tags(:tags="['Typescript','HTML & CSS','Vite.js']")
 PageNav(:next="{label:'Experiences',link:'/experiences'}")
 </template>
 
